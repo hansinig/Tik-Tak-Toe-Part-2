@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Part 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 30px 20px;
+        }
+
+        .game-container {
+            text-align: center;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #d32f2f;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .turn-indicator {
+            background-color: #fff;
+            border: 3px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .board {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #e8e8e8;
+            border: 3px solid #333;
+            display: inline-block;
+            margin: 5px;
+            font-size: 60px;
+            font-weight: bold;
+            line-height: 100px;
+            text-align: center;
+            cursor: pointer;
+            vertical-align: top;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .square:hover {
+            background-color: #ffb7ce;
+        }
+
+        /* Create 3x3 grid layout - force line breaks every 3 squares */
+        .square:nth-child(4),
+        .square:nth-child(7) {
+            clear: left;
+        }
+
+        .win-message {
+            background-color: #fff;
+            border: 3px solid #4caf50;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #4caf50;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1> Tic Tac Toe - Let's go! </h1>
+        
+        <div class="turn-indicator">
+            X's Turn
+        </div>
+
+        <div class="board">
+            <script>
+                const NUM_SQUARES = 9;
+                for (i=0; i<NUM_SQUARES; i++)
+                {
+                    id = "sq"+i;
+                    document.write( "<div class='square' id='" + id + "'></div>" );
+                }
+            </script>
+        </div>
+
+        <div class="win-message">
+            
+        </div>
+    </div>
+
+    <script>
+        // Place an X in row 1, column 3 (index 2)
+        document.getElementById("sq2").innerText = "X";
+        
+        // Place an O in row 2, column 1 (index 3)
+        document.getElementById("sq3").innerText = "O";
+    </script>
+</body>
+</html>
